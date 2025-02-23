@@ -10,7 +10,7 @@ namespace AutomaticCassie.PassiveCassie
     {
         public string Command { get; } = "Cassie-SCP049-Heavy"; 
 
-        public string[] Aliases { get; } = new[] { "C-049-H" }; 
+        public string[] Aliases { get; } = new[] { "049Hcz", "049Heavy" }; 
 
         public string Description { get; } = "Cassie informujące o SCP-049 w Heavy Containment"; 
 
@@ -51,7 +51,7 @@ namespace AutomaticCassie.PassiveCassie
     {
         public string Command { get; } = "Cassie-SCP049-Entrance";
 
-        public string[] Aliases { get; } = new[] { "C-049-E" }; 
+        public string[] Aliases { get; } = new[] { "049Ecz", "049Entrance" }; 
 
         public string Description { get; } = "Cassie informujące o SCP-049 w Entrance Zone"; 
 
@@ -90,11 +90,11 @@ namespace AutomaticCassie.PassiveCassie
     [CommandHandler(typeof(RemoteAdminCommandHandler))] 
     class SCP049Entrance : ICommand 
     {
-        public string Command { get; } = "Cassie-SCP049-Entrance"; 
+        public string Command { get; } = "Cassie-SCP049-Light"; 
 
-        public string[] Aliases { get; } = new[] { "C-049-E" };
+        public string[] Aliases { get; } = new[] { "049Lcz", "049Light" };
 
-        public string Description { get; } = "Cassie informujące o SCP-049 w Entrance Zone"; 
+        public string Description { get; } = "Cassie informujące o SCP-049 w Light Containment Zone"; 
 
 
         // Z tym nic nie rób
@@ -103,7 +103,7 @@ namespace AutomaticCassie.PassiveCassie
             if (sender is PlayerCommandSender) 
             {
                 response = "Komenda wysłana pomyślnie";
-                Cassie.MessageTranslated("pitch_0.7 .g4 .g6 pitch_1 jam_042_4 Warning .g1 .g1 to all jam_30_3 Personnel . . SCP 0 4 9 Detected jam_027_4 .g5 in Pitch_0.9 Entrance Zone pitch_0.6 .g4", "Uwaga do całego Personelu . . Aktywność podmiotu <color=#FF0000>SCP 049</color> została wykryta w Strefie Wejściowej.", isNoisy:false);
+                Cassie.MessageTranslated("pitch_0.7 .g4 .g6 pitch_1 jam_042_4 Warning .g1 .g1 to all jam_30_3 Personnel . . SCP 0 4 9 Detected jam_027_4 .g5 in Pitch_0.9 Light Containment Zone pitch_0.6 .g4", "Uwaga do całego Personelu . . Aktywność podmiotu <color=#FF0000>SCP 049</color> została wykryta w Strefie Niższego Nadzoru.", isNoisy:false);
                 return true;
             }
             else 

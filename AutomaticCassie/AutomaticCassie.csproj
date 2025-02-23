@@ -89,17 +89,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActiveCassie\ChaosInsurgencySpawnCassie.cs" />
     <Compile Include="ActiveCassie\Epsilon11SpawnCassie.cs" />
     <Compile Include="ActiveCassie\RandomGCassieCombinations.cs" />
     <Compile Include="ActiveCassie\SCP079Level2Detected.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="EventHandlers.cs" />
+    <Compile Include="PassiveCassie\AlphaWarhead\GeneratorsCassie.cs" />
     <Compile Include="PassiveCassie\CassieAlpha1Enter.cs" />
+    <Compile Include="PassiveCassie\CassieHammerDownEnter.cs" />
+    <Compile Include="PassiveCassie\CassieO1Enter.cs" />
     <Compile Include="PassiveCassie\CassieO5WarheadDetonation.cs" />
     <Compile Include="PassiveCassie\CassieSCP049.cs" />
     <Compile Include="PassiveCassie\CassieSCP082.cs" />
+    <Compile Include="PassiveCassie\CassieSCP106.cs" />
     <Compile Include="PassiveCassie\CassieSCP173.cs" />
+    <Compile Include="PassiveCassie\CassieSCP939.cs" />
+    <Compile Include="PassiveCassie\CassiesSCP096.cs" />
+    <Compile Include="PassiveCassie\ChaosInsurgencyCassie.cs" />
+    <Compile Include="PassiveCassie\ClassDCassie.cs" />
     <Compile Include="PassiveCassie\ExampleCommand.cs" />
+    <Compile Include="PassiveCassie\KodyCassie.cs" />
+    <Compile Include="PassiveCassie\MTFCassie.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

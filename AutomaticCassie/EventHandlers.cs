@@ -18,6 +18,7 @@ namespace AutomaticCassie
         {
             Exiled.Events.Handlers.Map.AnnouncingNtfEntrance += ActiveCassie.Epsilon11SpawnCassie.OnMTFSpawn;
             Exiled.Events.Handlers.Scp079.GainingLevel += ActiveCassie.SCP079Level2Detected.ZeroSevenNineContainmentBreach;
+            Exiled.Events.Handlers.Map.AnnouncingChaosEntrance += ActiveCassie.ChaosInsurgencySpawnCassie.OnChaosSpawn;
             server.WaitingForPlayers += OnWaitingForPlayers;
         }
 
@@ -25,6 +26,7 @@ namespace AutomaticCassie
         {
             Exiled.Events.Handlers.Map.AnnouncingNtfEntrance -= ActiveCassie.Epsilon11SpawnCassie.OnMTFSpawn;
             Exiled.Events.Handlers.Scp079.GainingLevel -= ActiveCassie.SCP079Level2Detected.ZeroSevenNineContainmentBreach;
+            Exiled.Events.Handlers.Map.AnnouncingChaosEntrance -= ActiveCassie.ChaosInsurgencySpawnCassie.OnChaosSpawn;
             server.WaitingForPlayers -= OnWaitingForPlayers;
         }    
 

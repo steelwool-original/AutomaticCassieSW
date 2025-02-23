@@ -19,7 +19,7 @@ namespace AutomaticCassie.PassiveCassie
             if (sender is PlayerCommandSender) 
             {
                 response = "Komenda wysłana pomyślnie";
-                Cassie.MessageTranslated("cassie_sl pitch_0.7 .g4 .g6 pitch_1 jam_042_4 Warning . . SCP 1 7 3 Detected jam_027_4 .g5 in Pitch_0.9 Light Containment pitch_0.6 .g4", "Uwaga, <color=#FF0000>SCP-173</color> został wykryty w Strefie Lekkiego Przechowywania", isNoisy:false);
+                Cassie.MessageTranslated("pitch_0.7 .g4 .g6 pitch_1 jam_042_4 Warning . . SCP 1 7 3 Detected jam_027_4 .g5 in Pitch_0.9 Light Containment pitch_0.6 .g4", "Uwaga, <color=#FF0000>SCP-173</color> został wykryty w Strefie Lekkiego Przechowywania", isNoisy:false);
                 return true;
             }
             else 
@@ -52,7 +52,7 @@ namespace AutomaticCassie.PassiveCassie
             if (sender is PlayerCommandSender) 
             {
                 response = "Pomyślnie wysłano komende";
-                Cassie.MessageTranslated("cassie_sl pitch_0.7 .g4 .g6 pitch_1 jam_042_4 Warning . . SCP 1 7 3 Detected jam_027_4 .g5 in Pitch_0.9 Heavy Containment pitch_0.6 .g4", "Uwaga, <color=#FF0000>SCP-173</color> został wykryty w Strefie Wyższego Przechowywania", isNoisy:false);
+                Cassie.MessageTranslated("pitch_0.7 .g4 .g6 pitch_1 jam_042_4 Warning . . SCP 1 7 3 Detected jam_027_4 .g5 in Pitch_0.9 Heavy Containment pitch_0.6 .g4", "Uwaga, <color=#FF0000>SCP-173</color> został wykryty w Strefie Wyższego Przechowywania", isNoisy:false);
                 return false;
             }
             else 

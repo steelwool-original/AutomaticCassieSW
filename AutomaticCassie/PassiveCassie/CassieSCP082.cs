@@ -74,7 +74,7 @@ class SCP082EntranceZone : ICommand
     {
         public string Command { get; } = "Cassie-SCP082-HeavyContainment";
 
-        public string[] Aliases { get; } = new[] { "SCP082-HC", "082Heavy" };
+        public string[] Aliases { get; } = new[] { "SCP082-HCZ", "082Heavy" };
 
         public string Description { get; } = "Puszcza Cassie o wykryciu SCP-082 w Strefie Ciężkiego Przechowywania.";
 
@@ -102,5 +102,84 @@ class SCP082EntranceZone : ICommand
 
     }
 
+
+    [CommandHandler(typeof(RemoteAdminCommandHandler))]
+    class SCP082Secured : ICommand
+    {
+        public string Command { get; } = "Cassie-SCP082-Secured";
+
+        public string[] Aliases { get; } = new[] { "SCP082-S", "082Secured" };
+
+        public string Description { get; } = "Puszcza Cassie o zabezpieczeniu SCP-082.";
+
+        public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
+        {
+            if (sender is PlayerCommandSender)
+            {
+                response = "Komenda wysłana pomyślnie";
+                Cassie.MessageTranslated(".g4 .g4 SCP 0 8 2 jam_030_2 contained successfully by .g6 MTFunits .g5", "<color=#FF0000>SCP-082</color> został skutecznie zabezpieczony przez jednostki <color=#ADD8E6>MFO</color>", isNoisy: false);
+                return true;
+            }
+            else
+            {
+                response = "InvalidRemoteAdminExepction";
+                return false;
+            }
+        }
+
+    }
+
+    [CommandHandler(typeof(RemoteAdminCommandHandler))]
+    class SCP082TerminationMTF : ICommand
+    {
+        public string Command { get; } = "Cassie-SCP082-TerminationMTF";
+
+        public string[] Aliases { get; } = new[] { "SCP082-TMTF" };
+
+        public string Description { get; } = "Puszcza Cassie o terminacji SCP-082 z powodu zabicia operatora MTF.";
+
+        public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
+        {
+            if (sender is PlayerCommandSender)
+            {
+                response = "Komenda wysłana pomyślnie";
+                Cassie.MessageTranslated(".g4 .g5 pitch_0.85 jam_45_2 Danger . . pitch_1.0 .g4 pitch_0.95 SCP 0 8 2 killed Mobile Task Force jam_44_3 agent . . pitch_1.0 Attention .g4 MTFunit . pitch_0.9 jam_46_4 terminate SCP 0 8 2 pitch_1.0 .g3 .g3", "<color=#FF0000>Niebezpieczeństwo</color>, <color=#FF0000>SCP-082</color> zabił członka <color=#ADD8E6>Mobilnej Formacji Operacyjnej</color>. Uwaga! Jednostka <color=#ADD8E6>MTF</color>, natychmiast terminować <color=#FF0000>SCP-082</color>.", isNoisy: false);
+                return true;
+            }
+            else
+            {
+                response = "InvalidRemoteAdminExepction";
+                return false;
+            }
+        }
+
+    }
+
+
+    [CommandHandler(typeof(RemoteAdminCommandHandler))]
+    class SCP082TerminationPersonnel : ICommand
+    {
+        public string Command { get; } = "Cassie-SCP082-TerminationP";
+
+        public string[] Aliases { get; } = new[] { "SCP082-TP" };
+
+        public string Description { get; } = "Puszcza Cassie o terminacji SCP-082 z powodu zabicia Personelu Placówki.";
+
+        public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
+        {
+            if (sender is PlayerCommandSender)
+            {
+                response = "Komenda wysłana pomyślnie";
+                Cassie.MessageTranslated("Cassie_sl .g4 .g5 pitch_0.85 jam_45_2 Danger . . pitch_1.0  .g4 pitch_0.95 SCP 0 8 2 killed 1  of pitch_0.8 jam_44_3 personnel . . pitch_1.0 Attention .g4 MTFunit . pitch_0.9 jam_46_4 terminate SCP 0 8 2 pitch_1.0 .g3 .g3", "<color=#FF0000>Niebezpieczeństwo</color>, <color=#FF0000>SCP-082</color> zabił jednego członka personelu Fundacji. Uwaga! Jednostka <color=#ADDE6>MTF</color>, natychmiast terminować <color=#FF0000>SCP-082</color>.", isNoisy: false);
+                return true;
+            }
+            else
+            {
+                response = "InvalidRemoteAdminExepction";
+                return false;
+            }
+        }
+
+    }
 
 }
