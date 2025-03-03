@@ -10,7 +10,7 @@ namespace AutomaticCassie.PassiveCassie
     {
         public string Command { get; } = "Cassie-Omega1-Enter";
 
-        public string[] Aliases { get; } = new[] { "C-O1-E" };
+        public string[] Aliases { get; } = new[] { "" };
 
         public string Description { get; } = "Cassie informujące o wkroczeniu MFO Law's Left Hand do placówki";
 

@@ -10,7 +10,7 @@ namespace AutomaticCassie.PassiveCassie
     {
         public string Command { get; } = "Cassie-HammerDown-Enter";
 
-        public string[] Aliases { get; } = new[] { "C-Nu7-E" };
+        public string[] Aliases { get; } = new[] { "" };
 
         public string Description { get; } = "Cassie informujące o wkroczeniu MFO Hammer Down do placówki";
 
