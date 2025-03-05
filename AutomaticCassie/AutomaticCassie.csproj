@@ -97,13 +97,6 @@
     <Compile Include="EventHandlers.cs" />
     <Compile Include="MainDictionary.cs" />
     <Compile Include="PassiveCassie\AlphaWarhead\GeneratorsCassie.cs" />
-    <Compile Include="PassiveCassie\CassieAlpha1Enter.cs" />
-    <Compile Include="PassiveCassie\CassieHammerDownEnter.cs" />
-    <Compile Include="PassiveCassie\CassieO1Enter.cs" />
-    <Compile Include="PassiveCassie\CassieO5WarheadDetonation.cs" />
-    <Compile Include="PassiveCassie\ChaosInsurgencyCassie.cs" />
-    <Compile Include="PassiveCassie\ExampleCommand.cs" />
-    <Compile Include="PassiveCassie\KodyCassie.cs" />
     <Compile Include="PassiveCassie\MTFCassie.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
