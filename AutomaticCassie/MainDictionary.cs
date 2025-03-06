@@ -386,7 +386,6 @@ namespace AutomaticCassie
                 Cassie.Message("Unkown Command", isSubtitles: true);    
             }
         }
-
     }
 
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
@@ -553,7 +552,10 @@ namespace AutomaticCassie
                         CassieDeathsies.ClassDShit(codeword);
                     }
                     break;
+<<<<<<< HEAD
                 //--
+=======
+>>>>>>> d0ee15b1af39ca57ee1fcccdb9baae5b7dcace45
                 case "kod":
                     if (arguments.Count > 2)
                     {
@@ -576,6 +578,7 @@ namespace AutomaticCassie
                 //--
                 case "enter":
                 //--
+                case "enter":
                 case "facilitydetonate":
                     if (arguments.Count < 1) 
                     {
