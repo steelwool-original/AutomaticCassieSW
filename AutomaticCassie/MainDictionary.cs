@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using CommandSystem;
 using Exiled.API.Enums;
 using Exiled.API.Features;
 using Exiled.API.Features.Doors;
-using UnityEngine;
 
 
 namespace AutomaticCassie
 {
     static class CassieDeathsies
     {
-     
+
         public static Dictionary<int, Tuple<string, string>> translations = new Dictionary<int, Tuple<string, string>>
         {
             // Translacje i CASSIE przechowywane w Dictionary bedą tylko takie które wymagają parametru, albo takie które też w innych metodach będą używane.
@@ -54,10 +52,10 @@ namespace AutomaticCassie
 
         #region ConvertedLocPL
         private static string convertedLoc_pl;
-        public static string ConvertedLoc_PL 
+        public static string ConvertedLoc_PL
         {
             get { return convertedLoc_pl; }
-            set 
+            set
             {
                 convertedLoc_pl = (value == "Entrance Zone") ? "<color=#FF8000>Strefa Wejściowa</color>" :
                 (value == "Heavy Containment Zone") ? "<color=#9C0000>Strefa Ciężkiego Nadzoru</color>" :
@@ -94,10 +92,10 @@ namespace AutomaticCassie
 
         #region validLoc
         private static string validLoc;
-        public static string ValidLoc 
+        public static string ValidLoc
         {
             get { return validLoc; }
-            set 
+            set
             {
                 if (value.Equals("LCZ", StringComparison.OrdinalIgnoreCase) ||
                     value.Equals("HCZ", StringComparison.OrdinalIgnoreCase) ||
@@ -105,7 +103,7 @@ namespace AutomaticCassie
                 {
                     validLoc = value;
                 }
-                else 
+                else
                 {
                     validLoc = "LOCNR";
                 }
@@ -120,19 +118,19 @@ namespace AutomaticCassie
 
         #region SCPConverter
         private static string convertedSCP;
-        public static string ConvertedSCP 
+        public static string ConvertedSCP
         {
             get { return convertedSCP; }
-            set 
+            set
             {
-               convertedSCP = (value == "SCP049") ? "SCP 0 4 9" :
-               (value == "SCP106") ? "SCP 1 0 6" :
-               (value == "SCP939") ? "SCP 9 3 9" :
-               (value == "SCP173") ? "SCP 1 7 3" :
-               (value == "SCP096") ? "SCP 0 9 6" :
-               (value == "SCP079") ? "SCP 0 7 9" :
-               (value == "SCP082") ? "SCP 0 8 2" :
-               "InvalidSCP";
+                convertedSCP = (value == "SCP049") ? "SCP 0 4 9" :
+                (value == "SCP106") ? "SCP 1 0 6" :
+                (value == "SCP939") ? "SCP 9 3 9" :
+                (value == "SCP173") ? "SCP 1 7 3" :
+                (value == "SCP096") ? "SCP 0 9 6" :
+                (value == "SCP079") ? "SCP 0 7 9" :
+                (value == "SCP082") ? "SCP 0 8 2" :
+                "InvalidSCP";
 
 
                 ///<summary>
@@ -147,10 +145,10 @@ namespace AutomaticCassie
 
         public static void BreachCassie(string whobreached, string wherebreached)
         {
-            string breacher; 
-            string convertedbreacher; 
-            string loc; 
-            string convertedloc_PLL; 
+            string breacher;
+            string convertedbreacher;
+            string loc;
+            string convertedloc_PLL;
 
             ValidSCP = whobreached;
             convertedbreacher = validSCP;
@@ -178,21 +176,21 @@ namespace AutomaticCassie
 
         }
 
-        public static void SecureSCP(string whosecured) 
+        public static void SecureSCP(string whosecured)
         {
 
-            string convertedsecured; 
+            string convertedsecured;
 
             if (string.IsNullOrEmpty(whosecured))
             {
                 whosecured = "Around";
             }
 
-                ValidSCP = whosecured;
-                convertedsecured = validSCP;
-                whosecured = convertedsecured;
-                ConvertedSCP = convertedsecured;
-                convertedsecured = convertedSCP;
+            ValidSCP = whosecured;
+            convertedsecured = validSCP;
+            whosecured = convertedsecured;
+            ConvertedSCP = convertedsecured;
+            convertedsecured = convertedSCP;
 
 
             // Cassie.Message(string.Format(translations[1].Item1, convertedsecured), isSubtitles: true); // To do debugu tylko
@@ -208,7 +206,7 @@ namespace AutomaticCassie
 
         }
 
-        public static void TerminationCassie(string terminateWho) 
+        public static void TerminationCassie(string terminateWho)
         {
             string SCP;
             string SCPPL;
@@ -232,12 +230,12 @@ namespace AutomaticCassie
 
         }
 
-        public static void LocalizationCassie(string who, string where) 
+        public static void LocalizationCassie(string who, string where)
         {
-            string SCPToLoc; 
-            string WhereLoc; 
-            string SCPConverted; 
-            string LocPL; 
+            string SCPToLoc;
+            string WhereLoc;
+            string SCPConverted;
+            string LocPL;
 
             ValidSCP = who;
             SCPConverted = validSCP;
@@ -260,7 +258,7 @@ namespace AutomaticCassie
 
         }
 
-        public static void MTFGoTo(string towhere) 
+        public static void MTFGoTo(string towhere)
         {
             string Destination;
             string DestinationPL;
@@ -286,7 +284,7 @@ namespace AutomaticCassie
 
         }
 
-        public static void MTFIntruders(string intruderLocation) 
+        public static void MTFIntruders(string intruderLocation)
         {
             string Location;
             string LocationPL;
@@ -307,21 +305,21 @@ namespace AutomaticCassie
             /// </summary>
         }
 
-        public static void ClassDShit(string whatEvent) 
+        public static void ClassDShit(string whatEvent)
         {
             if (whatEvent == "riot")
             {
                 Cassie.MessageTranslated("pitch_0.70 .g4 .g4 .g4 pitch_1 . Class D personnel . has escaped class d cells . pitch_0.70 .g4 .g4 g4", "Personel <color=#FF7700>Klasy D</color> wyłamał się z cel.", isNoisy: false);
             }
-            else if (whatEvent == "termination") 
+            else if (whatEvent == "termination")
             {
                 Cassie.MessageTranslated("jam_077_4 MtfUnits All jam_042_3 ClassD . Personnel Designated pitch_1.1 For pitch_1 .g3 jam_067_3 Termination .g4", "Cały personel <color=#FF7700>Klasy D</color> został wyznaczony do <color=#FF0000>terminacji</color>.", isNoisy: true);
             }
-            else if(whatEvent == "terminated") 
+            else if (whatEvent == "terminated")
             {
                 Cassie.MessageTranslated("All .g4 Class 0 jam_044_2 Personnel .g5 Has. pitch_0.8 been jam_055_8 Terminated .g2", "Cały personel 0 został zlikwidowany.", isNoisy: false);
             }
-            else if(whatEvent == "termcancel") 
+            else if (whatEvent == "termcancel")
             {
                 Cassie.MessageTranslated("pitch_0.4 .g2 .g1 .g5 .g2 .g3 pitch_0.7 jam_022_4 Warning pitch_0.85 class D termination jam_060_7 cancel . MTFunits .g5 secure all jam_036_5 class D personnel pitch_0.3 .g1 .g5 .g3 .g1", "<color=#FF0000>Ostrzeżenie</color>: Terminacja <color=#FF7700>klasy D</color> zostało anulowane. Zabezpieczyć cały personel <color=#FF7700>klasy D</color>.", isNoisy: false);
             }
@@ -332,7 +330,7 @@ namespace AutomaticCassie
 
         }
 
-        public static void CodeCassie(string whatCode) 
+        public static void CodeCassie(string whatCode)
         {
             if (whatCode == "pomarańczowy")
             {
@@ -350,7 +348,7 @@ namespace AutomaticCassie
             }
         }
 
-        public static void EnterCassie(string whatDivision) 
+        public static void EnterCassie(string whatDivision)
         {
             if (whatDivision == "nu7")
             {
@@ -366,26 +364,27 @@ namespace AutomaticCassie
             }
         }
 
-        public static void OnDetonationCentreCassie() 
+        public static void OnDetonationCentreCassie()
         {
             Cassie.MessageTranslated("cassie_sl pitch_0.1 .g4 . .g4 pitch_0.9 Warning . . pitch_0.8 Warning . facility status is critical .g1 . detonation jam_044_2 center .g2  jam_044_2  decided that site 0 2 is designated .g6 for jam_044_2  detonation .g2 with Alpha Warhead . please evacuate immediately . MtfUnits evacuate to surface .g1 zone and secure elevators . jam_044_2  detonation sequence .g3 will be jam_044_2  initiated in 30 seconds . emergency jam_044_2  generators will be initiated in 3 . . 2 . . 1 . .G1 .G3 .G2", "<color=#FF0000>Uwaga</color> do całego personelu, Status <color=#ADD8E6>Placówki</color> jest <color=#FF0000>krytyczny</color> Centrum Detonacji zadecydowało o detonacji <color=#ADD8E6>Ośrodka-02</color>. Zadaniem całego personelu jest ewakuacja na strefę zewnętrzną wraz z Mobilnymi Formacjami Operacyjnymi. E-11 zabezpieczcie windy surface zone Sekwencja detonacji rozpocznie się za 30 sekund, Awaryjne generatory zostaną uruchomione za 3.. 2.. 1..");
         }
 
-        public static void AlphaWarheadEvents(string whatEvent) 
+        public static void AlphaWarheadEvents(string whatEvent)
         {
-            if (whatEvent == "awdamaged") 
+            if (whatEvent == "awdamaged")
             {
                 Cassie.MessageTranslated("pitch_0.2 .g4 . .g4 pitch_1 Warning . alpha pitch_0.93 jam_72_5 warhead jam_027_4 has been damaged in 10 percent . Evacuate immediately", "<color=#FF0000>Uwaga</color>, głowica Alpha Warhead została uszkodzona w 10%, Ewakuować się natychmiastowo!", isNoisy: false);
             }
-            else if (whatEvent == "awunauthorized") 
+            else if (whatEvent == "awunauthorized")
             {
                 Cassie.MessageTranslated("pitch_0.3 .g4 . .g4 . .g4 pitch_1 jam_01_3 danger . pitch_0.7 not authorized pitch_0.9 personnel pitch_1 detected in pitch_0.8 heavy containment pitch_1 jam_7_3 warhead . pitch_0.8 .g4 . .g4 . .g4 . ", "<color=#FF0000>Niebezpieczeństwo</color>, Wykryto nieautoryzowany personel w strefie głowicy Heavy Containment Zone.", isNoisy: false);
             }
-            else 
+            else
             {
-                Cassie.Message("Unkown Command", isSubtitles: true);    
+                Cassie.Message("Unkown Command", isSubtitles: true);
             }
         }
+
     }
 
     [CommandHandler(typeof(RemoteAdminCommandHandler))]
@@ -393,14 +392,14 @@ namespace AutomaticCassie
     {
         public string Command { get; } = "pcassie";
 
-        public string[] Aliases { get; } = {};
+        public string[] Aliases { get; } = { };
 
         public string Description { get; } = "System Komend 'pcassie'";
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
 
-            if (arguments.Count == 0) 
+            if (arguments.Count == 0)
             {
                 response = "No arguments!";
                 return false;
@@ -408,20 +407,20 @@ namespace AutomaticCassie
 
             string category = arguments.At(0).ToLower();
 
-            switch (category) 
+            switch (category)
             {
                 case "breach":
-                    if (arguments.Count < 3) 
+                    if (arguments.Count < 3)
                     {
                         response = "No arguments!";
                         return false;
                     }
-                    else if(arguments.Count > 3) 
+                    else if (arguments.Count > 3)
                     {
                         response = "Too many arguments!";
                         return false;
                     }
-                    else 
+                    else
                     {
                         string breacher;
                         string loc;
@@ -431,9 +430,9 @@ namespace AutomaticCassie
                     }
 
                     break;
-                    // -- 
+                // -- 
                 case "secure":
-                    if (arguments.Count < 2) 
+                    if (arguments.Count < 2)
                     {
                         response = "No arguments!";
                         return false;
@@ -443,33 +442,33 @@ namespace AutomaticCassie
                         response = "Too many arguments!";
                         return false;
                     }
-                    else 
+                    else
                     {
                         string securesubject;
                         securesubject = arguments.At(1).ToUpper();
                         CassieDeathsies.SecureSCP(securesubject);
                     }
                     break;
-                    // --
+                // --
                 case "termination":
-                   if (arguments.Count < 2) 
+                    if (arguments.Count < 2)
                     {
                         response = "No arguments!";
                         return false;
                     }
-                   else if (arguments.Count > 2)
+                    else if (arguments.Count > 2)
                     {
                         response = "Too many arguments!";
                         return false;
                     }
-                   else 
+                    else
                     {
                         string whoterminate;
                         whoterminate = arguments.At(1).ToUpper();
                         CassieDeathsies.TerminationCassie(whoterminate);
                     }
                     break;
-                    // --
+                // --
                 case "localization":
                     if (arguments.Count < 3)
                     {
@@ -481,7 +480,7 @@ namespace AutomaticCassie
                         response = "Too many arguments!";
                         return false;
                     }
-                    else 
+                    else
                     {
                         string localizewho;
                         string localizewhere;
@@ -490,19 +489,19 @@ namespace AutomaticCassie
                         localizewhere = arguments.At(2).ToUpper();
                         CassieDeathsies.LocalizationCassie(localizewho, localizewhere);
                     }
-                        break;
+                    break;
                 case "mtfgoto":
-                    if (arguments.Count > 2) 
+                    if (arguments.Count > 2)
                     {
                         response = "Too many arguments!";
-                        return false ;
+                        return false;
                     }
-                    else if (arguments.Count < 2) 
+                    else if (arguments.Count < 2)
                     {
                         response = "No arguments!";
-                        return false ;
+                        return false;
                     }
-                    else 
+                    else
                     {
                         string gotowhere;
                         gotowhere = arguments.At(1).ToUpper();
@@ -552,10 +551,7 @@ namespace AutomaticCassie
                         CassieDeathsies.ClassDShit(codeword);
                     }
                     break;
-<<<<<<< HEAD
                 //--
-=======
->>>>>>> d0ee15b1af39ca57ee1fcccdb9baae5b7dcace45
                 case "kod":
                     if (arguments.Count > 2)
                     {
@@ -578,36 +574,35 @@ namespace AutomaticCassie
                 //--
                 case "enter":
                 //--
-                case "enter":
                 case "facilitydetonate":
-                    if (arguments.Count < 1) 
+                    if (arguments.Count < 1)
                     {
                         response = "No arguments!";
-                        return false;   
+                        return false;
                     }
-                    else if(arguments.Count > 1) 
+                    else if (arguments.Count > 1)
                     {
                         response = "Too many arguments!";
                         return false;
                     }
-                    else 
+                    else
                     {
                         CassieDeathsies.OnDetonationCentreCassie();
                     }
                     break;
                 //--
                 case "alphawarhead":
-                    if (arguments.Count < 2) 
+                    if (arguments.Count < 2)
                     {
                         response = "No arguments!";
                         return false;
                     }
-                    else if (arguments.Count > 2) 
+                    else if (arguments.Count > 2)
                     {
                         response = "Too many arguments!";
                         return false;
                     }
-                    else 
+                    else
                     {
                         string codeword;
                         codeword = arguments.At(1).ToLower();
